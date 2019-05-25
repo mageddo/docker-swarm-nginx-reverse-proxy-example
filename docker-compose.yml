@@ -1,0 +1,28 @@
+version: '3'
+services:
+  reverse-proxy:
+    build:
+      context: reverse-proxy
+      dockerfile: Dockerfile
+    networks:
+      - swarm-network
+    ports:
+      - 80:80
+
+  service-1:
+    build:
+      context: service-1
+      dockerfile: Dockerfile
+    networks:
+      - swarm-network
+
+  service-2:
+    build:
+      context: service-2
+      dockerfile: Dockerfile
+    networks:
+      - swarm-network
+
+networks:
+  swarm-network:
+    external: true
