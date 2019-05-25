@@ -2,6 +2,8 @@ Setup the network
 
 ```bash
 $ docker network create --attachable --driver overlay swarm-network
+$ docker-compose build
+$ docker stack deploy -c docker-compose.yml nginx-reverse-proxy
 ```
 
 Testing reverse-proxy

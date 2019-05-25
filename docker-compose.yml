@@ -1,6 +1,7 @@
 version: '3'
 services:
   reverse-proxy:
+    image: reverse-proxy
     build:
       context: reverse-proxy
       dockerfile: Dockerfile
@@ -10,6 +11,7 @@ services:
       - 80:80
 
   service-1:
+    image: service-1
     build:
       context: service-1
       dockerfile: Dockerfile
@@ -17,6 +19,7 @@ services:
       - swarm-network
 
   service-2:
+    image: service-2
     build:
       context: service-2
       dockerfile: Dockerfile
